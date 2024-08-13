@@ -1,0 +1,29 @@
+.fifth-section {
+    background: linear-gradient($bg 30%, $white);
+
+    &__title {
+        margin-bottom: 20px;
+        @include h2-fz35;
+        text-align: center;
+    }
+
+    &__text {
+        max-width: 555px;
+        margin: 0 auto 155px;
+        @include text-fz16;
+        text-align: center;
+
+        @media (max-width: 1199.98px) {
+            margin: 0 auto 40px;
+        }
+
+        @media (max-width: 767.98px) {
+            max-width: 100%;
+        }
+    }
+
+    &__image-wrapper {
+        max-width: 1060px;
+        margin: 0 auto;
+    }
+}

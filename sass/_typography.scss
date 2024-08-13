@@ -1,0 +1,62 @@
+@mixin fz16 {
+    font-size: 16px;
+    line-height: 119%;
+}
+
+@mixin h1-fz50 {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 140%;
+    color: $title;
+
+    @media (max-width: 767.98px) {
+        font-size: 40px;
+    }
+}
+
+@mixin h2-fz35 {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 143%;
+    color: $title;
+
+    @media (max-width: 767.98px) {
+        font-size: 30px;
+    }
+}
+
+@mixin h3-fz25 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+    color: $title;
+
+    @media (max-width: 991.98px) {
+        font-weight: 500;
+    }
+}
+
+@mixin h4-fz18 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 167%;
+    color: $title;
+}
+
+@mixin text-fz20 {
+    font-size: 20px;
+    line-height: 150%;
+    color: $text;
+}
+
+@mixin text-fz16 {
+    font-size: 16px;
+    line-height: 188%;
+    color: $text;
+}
+
+@mixin text-fz14 {
+    font-size: 14px;
+    line-height: 214%;
+    color: $text;
+}

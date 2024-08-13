@@ -1,0 +1,28 @@
+.sixth-section {
+    padding-top: 35px;
+    padding-bottom: 50px;
+
+    &__items-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        @media (max-width: 1215.98px) {
+            gap: 10px;
+        }
+    }
+
+    &__item {
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1215.98px) {
+            max-width: 100px;
+        }
+    }
+}

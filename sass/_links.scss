@@ -1,0 +1,112 @@
+@mixin link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 119%;
+}
+
+@mixin link_text {
+    position: relative;
+    color: $link-text;
+    transition: color 0.3s ease-in-out;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: $red;
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: $red;
+    }
+
+    &:hover:after {
+        transform-origin: bottom right;
+        transform: scaleX(1);
+    }
+}
+
+@mixin link-button {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(245, 56, 56, 0.35);
+        filter: blur(27px);
+    }
+}
+
+@mixin link-button_transparent {
+    min-width: 150px;
+    padding: 13px;
+    outline: 1px solid $button-red;
+    border-radius: 50px;
+    color: $button-red;
+    background-color: transparent;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    &::after {
+        top: 17px;
+        border-radius: 60px;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: $white;
+        background-color: $red;
+    }
+
+    &:hover:after {
+        width: 127px;
+        height: 45px;
+        z-index: -1;
+    }
+}
+
+@mixin link-button_red {
+    min-width: 250px;
+    padding: 18px;
+    outline: none;
+    border-radius: 10px;
+    color: $white;
+    background-color: $red;
+    z-index: 1;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 156%;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+    &::after {
+        width: 212px;
+        height: 60px;
+        z-index: -1;
+        top: 25px;
+        border-radius: 10px;
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    &:hover {
+        color: $red;
+        background-color: transparent;
+        outline: 1px solid $button-red;
+    }
+
+    &:hover:after {
+        width: 0;
+        height: 0;
+    }
+}

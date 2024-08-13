@@ -1,0 +1,248 @@
+.seventh-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: $white;
+
+    @media (max-width: 1439.98px) {
+        max-width: 100%;
+    }
+
+    @media (max-width: 767.98px) {
+        padding: 0 10px;
+    }
+
+    &__title {
+        max-width: 448px;
+        margin: 0 auto 20px;
+        @include h2-fz35;
+        text-align: center;
+
+        @media (max-width: 767.98px) {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        max-width: 555px;
+        margin: 0 auto 60px;
+        @include text-fz16;
+        text-align: center;
+
+        @media (max-width: 767.98px) {
+            max-width: 100%;
+            margin: 0 auto 30px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        padding-left: 150px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 190px;
+            z-index: 0;
+            width: 318px;
+            height: 300px;
+            background-color: #0D1025;
+            opacity: 0.06;
+            filter: blur(57px);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1439.98px) {
+            padding-left: 50px;
+        }
+
+        @media (max-width: 767.98px) {
+            padding-left: 0;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    &__slider-wrapper {
+        margin-bottom: 60px;
+        overflow: hidden;
+
+        @media (max-width: 767.98px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-inner {
+        display: flex;
+        gap: 50px;
+        transition: all 0.3s ease-in-out;
+
+        @media (max-width: 767.98px) {
+            gap: 0;
+        }
+    }
+
+    &__slide {
+        position: relative;
+        z-index: 1;
+        width: 400px;
+        padding: 30px;
+        border: 2px solid $border;
+        border-radius: 10px;
+        background-color: $white;
+        cursor: pointer;
+        transition: border 0.3s ease-in-out;
+
+        &_active {
+            border: 2px solid $red;
+        }
+
+        @media (max-width: 991.98px) {
+            padding: 15px;
+        }
+    }
+
+    &__slide-top {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 575.98px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__slide-info-user {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__slide-image-wrapper {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
+
+    &__slide-surname {
+        @include h4-fz18;
+    }
+
+    &__slide-country {
+        @include text-fz14;
+    }
+
+    &__slide-rating {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    &__slide-rating-text {
+        @include text-fz16;
+        color: $title;
+    }
+
+    &__slide-rating-svg-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 16px;
+    }
+
+    &__slide-text {
+        @include text-fz16;
+        color: $title;
+    }
+
+    &__slider-nav {
+        padding-right: 150px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 1439.98px) {
+            padding-right: 50px;
+        }
+
+        @media (max-width: 767.98px) {
+            padding-right: 0;
+            justify-content: flex-end;
+        }
+    }
+
+    &__dots-wrapper {
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+    }
+
+    &__dot {
+        width: 15px;
+        height: 15px;
+        background-color: $dot-bg;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+
+        &_active {
+            width: 45px;
+            height: 15px;
+            background-color: $red;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: $red;
+        }
+    }
+
+    &__arrows-wrapper {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        outline: 2px solid $red;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+
+        &-next {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            outline: none;
+            background-color: $red;
+
+            .seventh-section__arrow-use {
+                fill: $white;
+            }
+        }
+    }
+
+    &__arrow-svg {
+        width: 20px;
+        height: 18px;
+    }
+
+    &__arrow-use {
+        fill: $red;
+        transition: fill 0.3s ease-in-out;
+    }
+}

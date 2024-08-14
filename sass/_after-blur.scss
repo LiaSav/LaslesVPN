@@ -1,0 +1,13 @@
+@mixin after-blur {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    background-color: $after-blur;
+    opacity: 0.06;
+    filter: blur(57px);
+    border-radius: 10px;
+
+    @media (max-width: 1439.98px) {
+        content: none;
+    }
+}

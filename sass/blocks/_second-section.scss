@@ -3,18 +3,11 @@
     border-radius: 10px;
 
     &:after {
-        content: "";
-        position: absolute;
         top: 53px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 0;
         width: 1067px;
         height: 189px;
-        background-color: #0D1025;
-        opacity: 0.06;
-        filter: blur(57px);
-        border-radius: 10px;
 
         @media (max-width: 1199.98px) {
             width: 100%;

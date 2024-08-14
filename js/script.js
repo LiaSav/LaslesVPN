@@ -1,7 +1,72 @@
 'use strict';
 
 window.addEventListener('DOMContentLoaded', () => {
+    // menu 
+    const body = document.querySelector('.body'),
+        menu = body.querySelector('.header__nav'),
+        links = body.querySelector('.header__links-small'),
+        menuItem = menu.querySelectorAll('.header__nav-item'),
+        burger = body.querySelector('.header__burger');
 
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('header__burger_active');
+        menu.classList.toggle('header__nav_active');
+        links.classList.toggle('header__links-small_active');
+        body.classList.toggle('body_burger-open');
+    });
+
+    menuItem.forEach((item) => {
+        item.addEventListener('click', () => {
+            burger.classList.remove('header__burger_active');
+            menu.classList.remove('header__nav_active');
+            body.classList.remove('body_burger-open');
+        });
+    });
+
+    body.addEventListener('click', (e) => {
+        if (e.target.classList.contains('overlay')) {
+            burger.classList.remove('header__burger_active');
+            menu.classList.remove('header__nav_active');
+            body.classList.remove('body_burger-open');
+        }
+    });
+
+    // form
+    // создать бот с помощь BotFather
+    // добавить свой токен бота
+    const TOKEN = "",
+    // добавить свой айди бота
+        CHAT_ID = "",
+        URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`,
+        form = document.querySelector('.form'),
+        successMessage = document.querySelector('.form-message');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let message = `<b>Данные формы LaslesVPN</b>\n`;
+        message += `<b>Surname: </b>${this.lastName.value}\n`;
+        message += `<b>Email: </b>${this.email.value}\n`;
+        message += `<b>Phone: </b>${this.phone.value}\n`;
+
+        axios.post(URL_API, {
+            chat_id: CHAT_ID,
+            parse_mode: 'html',
+            text: message
+        })
+        .then((res) => {
+            this.lastName.value = '';
+            this.email.value = '';
+            this.phone.value = '';
+            successMessage.textContent = 'Message sent';
+            successMessage.style.display = 'block';
+        })
+        .catch((err) => {
+            console.warn(err);
+        })
+    });
+
+    // slider
     const slider = document.querySelector('.seventh-section__slider'),
         slides = slider.querySelectorAll('.seventh-section__slide'),
         prev = slider.querySelector('.seventh-section__arrow-prev'),

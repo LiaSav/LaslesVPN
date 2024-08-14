@@ -9,6 +9,10 @@
     @media (max-width: 1199.98px) {
         padding-bottom: 50px;
     }
+
+    @media (max-width: 575.98px) {
+        max-width: 100%;
+    }
 }
 
 .form-label {
@@ -30,4 +34,3 @@
     cursor: pointer;
     border: none;
 }
-
